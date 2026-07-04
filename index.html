@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7bdd0" />
+  <title>A Little Bloom for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <div class="sky" aria-hidden="true">
+      <span class="cloud cloud-one"></span>
+      <span class="cloud cloud-two"></span>
+      <span class="cloud cloud-three"></span>
+    </div>
+
+    <section class="garden" aria-label="Animated flower garden">
+      <div id="backgroundFlowers" class="background-flowers" aria-hidden="true"></div>
+      <div id="animalLayer" class="animal-layer" aria-hidden="true"></div>
+      <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
+      <div id="magicLayer" class="magic-layer" aria-hidden="true"></div>
+
+      <div class="intro" id="introText">
+        <p class="eyebrow">A tiny garden for</p>
+        <h1 id="recipientName">Someone special</h1>
+        <p id="dateBadge" class="date-badge">A bloom is growing</p>
+        <p id="openTimer" class="open-timer"></p>
+        <div id="hintRow" class="hint-row"></div>
+      </div>
+
+      <div class="flower-side-notes" aria-live="polite">
+        <p id="flowerInfo" class="flower-sticky-note flower-info-note"></p>
+        <p id="flowerFunFact" class="flower-sticky-note flower-fun-note"></p>
+      </div>
+
+      <div id="mainFlowerWrap" class="main-flower-wrap">
+        <button id="flowerButton" class="main-flower" type="button" aria-label="Click to open the flower and reveal the message">
+          <span class="tap-ring" aria-hidden="true"></span>
+          <span class="flower-head" aria-hidden="true">
+            <span class="bud"></span>
+            <span class="petal petal-1"></span>
+            <span class="petal petal-2"></span>
+            <span class="petal petal-3"></span>
+            <span class="petal petal-4"></span>
+            <span class="petal petal-5"></span>
+            <span class="petal petal-6"></span>
+            <span class="petal petal-7"></span>
+            <span class="petal petal-8"></span>
+            <span class="petal petal-9"></span>
+            <span class="petal petal-10"></span>
+            <span class="petal petal-11"></span>
+            <span class="petal petal-12"></span>
+            <span class="flower-center"></span>
+          </span>
+          <span class="stem" aria-hidden="true"></span>
+          <span class="leaf leaf-left" aria-hidden="true"></span>
+          <span class="leaf leaf-right" aria-hidden="true"></span>
+          <span id="tapHint" class="tap-hint">Click the flower</span>
+        </button>
+        <button id="flowerNote" class="flower-note" type="button" aria-label="Open the note" aria-hidden="true" tabindex="-1">
+          <span class="note-paper" aria-hidden="true">
+            <span class="note-fold"></span>
+            <span class="note-line note-line-one"></span>
+            <span class="note-line note-line-two"></span>
+            <span class="note-heart"></span>
+          </span>
+        </button>
+      </div>
+
+
+
+      <section class="memory-garden-wrap" aria-label="Previous blooms">
+        <div class="memory-garden-head">
+          <p class="memory-kicker">Bloom trail</p>
+          <p class="memory-subtitle">Previous flowers stay in the garden. Click any open bloom to read it again.</p>
+        </div>
+        <div id="memoryGarden" class="memory-garden"></div>
+      </section>
+
+      <article id="messageCard" class="message-card" aria-hidden="true">
+        <button id="closeMessage" class="close-message" type="button" aria-label="Close message">×</button>
+        <p class="card-kicker">bloomed with love</p>
+        <p id="messageMeta" class="message-meta"></p>
+        <h2 id="messageTitle">For you 🌸</h2>
+        <p id="messageBody"></p>
+        <p id="messageFlowerFact" class="message-flower-fact"></p>
+        <p id="finalLine" class="final-line"></p>
+        <p id="senderName" class="signature"></p>
+      </article>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
