@@ -163,7 +163,7 @@ function resolveDailyBloom(settings) {
   }
 
   if (endDate && today > endDate) {
-    return { status: "after", entry: entries.at(-1), today, endDate, preview: false };
+    return { status: "active", entry: entries.at(-1), today, endDate, preview: false, afterFinal: true };
   }
 
   return { status: "gap", entry: null, today, startDate, endDate, preview: false };
