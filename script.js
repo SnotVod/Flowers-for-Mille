@@ -157,13 +157,14 @@ function resolveDailyBloom(settings) {
 
   const startDate = settings.startDate || entries[0]?.date;
   const endDate = settings.endDate || entries.at(-1)?.date;
+  const finalEntry = entries.at(-1);
+
+  if (endDate && today > endDate) {
+    return { status: "active", entry: finalEntry, today, endDate, preview: false, afterFinal: true };
+  }
 
   if (startDate && today < startDate) {
     return { status: "before", entry: entries[0], today, startDate, daysLeft: Math.max(0, daysBetween(today, startDate)), preview: false };
-  }
-
-  if (endDate && today > endDate) {
-    return { status: "active", entry: entries.at(-1), today, endDate, preview: false, afterFinal: true };
   }
 
   return { status: "gap", entry: null, today, startDate, endDate, preview: false };
